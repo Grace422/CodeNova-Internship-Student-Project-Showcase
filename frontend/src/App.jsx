@@ -1,7 +1,10 @@
+import { Routes, Route } from 'react-router-dom';
 import SubmitProject from './SubmitProject';
 import ProjectGallery from './ProjectGallery';
+import AdminLogin from './AdminLogin';
+import AdminDashboard from './AdminDashboard';
 
-function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-gray-950 px-4 py-12 text-white">
       <header className="mx-auto mb-10 max-w-4xl text-center">
@@ -27,6 +30,19 @@ function App() {
         Student Project Showcase — Built for student innovation.
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/admin" element={<AdminLogin />} />
+      <Route
+        path="/admin/dashboard"
+        element={<AdminDashboard />}
+      />
+    </Routes>
   );
 }
 
